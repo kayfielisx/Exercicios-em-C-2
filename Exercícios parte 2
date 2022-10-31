@@ -1,0 +1,71 @@
+ float nota1, nota2 = 0, media, u = 1;
+            Console.Clear();
+            while (true)
+            {
+                Console.Clear();
+                Console.Write("digite o valor da nota do aluno: ");
+                nota1 = float.Parse(Console.ReadLine().Replace('.', ','));
+
+                if (nota1 == 666)
+                {
+                    break;
+                }
+                if (nota1 >= 0 && nota1 <= 10)
+                {
+                    nota2 = nota2 + nota1;
+                    media = nota2 / u;
+                    Console.WriteLine($"A media do aluno: {Math.Round(media, 2)}");
+                    Console.WriteLine($"notas insegiras: {u}");
+                    u++;
+                    Console.ReadLine();
+                }
+                Console.Clear();
+            }
+            Console.Clear();
+
+            // exercicio 3
+            int n1 = 0, vg = 0, vp = 0;
+            for (int p = 1; p <= 10; p++)
+            {
+                Console.WriteLine($"Digite o valor {p}: ");
+                n1 = int.Parse(Console.ReadLine());
+                if (n1 > vg)
+                {
+                    vg = n1;
+                    if (p == 0)
+                    {
+                        vp = vg;
+                    }
+                }
+                if (n1 < vp)
+                {
+                    vp = n1;
+                }
+                Console.WriteLine($"O maior valor encontrado é: {vg}");
+                Console.WriteLine($"O menor valor encontrado é: {vp}");
+                Console.ReadLine();
+                Console.Clear();
+            }
+
+            // exercicio 4
+            double x = 1, y = -8, z = 2;
+            double delta = (y * y) - (4 * x * z);
+            double raiz = Math.Sqrt(delta);
+            double r1 = ((-(y)) + raiz) / (2 * x);
+            double r2 = ((-(y)) - raiz) / (2 * x);
+            Console.WriteLine("O resultado da expressão (x²-8x+2=0):");
+            Console.WriteLine($"x1= {Math.Round(r1, 3)}"); Console.WriteLine($"x2= {Math.Round(r2, 3)}");
+            Console.ReadLine();
+            Console.Clear();
+
+            // exercicio 5
+            double v1, v2, v3;
+            Console.Write("digite um valor para definir o cateto oposto: ");
+            v1 = int.Parse(Console.ReadLine());
+            Console.Write("digite um valor para definir o cateto adjacente: ");
+            v2 = int.Parse(Console.ReadLine());
+            v3 = Math.Sqrt((v1 * v1) + (v2 * v2));
+            Console.Write($"A hipotenusa: {v3}");
+        }
+    }
+}
